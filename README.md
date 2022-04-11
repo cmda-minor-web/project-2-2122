@@ -12,9 +12,9 @@ Four days of creative exploration using the GitHub GraphQL API as the outset.
 
 ## Synopsis
 - Course: Project 2: GitHub Hackaton
-- Course Coordinator: Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5)) & Robert Spier ([@](https://github.com/))
+- Course Coordinator: Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5)) & Robert Spier ([@roberrrt-s](https://github.com/roberrrt-s))
 - Minor Coordinator(s): Joost Faber ([@joostf](https://github.com/joostf)) & Koop Reynders ([@KoopReynders](https://github.com/KoopReynders))
-- Lecturers: Robert Spier ([@](https://github.com/)) & Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5))
+- Lecturers: Robert Spier ([@roberrrt-s](https://github.com/roberrrt-s) & Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5))
 - Student Assistants: Daan Korver ([@daankorver](https://github.com/DaanKorver))
 - Credit: ??
 - Academic year: 2021-2022
