@@ -1,8 +1,13 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8000
 
-require('dotenv').config({path: '.env-dev'})
+require('dotenv').config({path: '.env'})
+
+const { graphql } = require('@octokit/graphql')
+const graphqlAuth = graphql.defaults({
+  headers: { authorization: 'token ' + process.env.API_KEY },
+})
 
 const {
   API_KEY
@@ -15,8 +20,26 @@ app.set('views', 'views')
 app.use(express.static('static'))
 
 app.get("/", (req, res) => {
-  res.render("index", {
-    title: "Het minor web wereldje",
+  graphqlAuth(`query {
+  repositoryOwner(login: "cmda-minor-web") {
+    repository(name: "css-to-the-rescue-2122") {
+      forks(first: 100) {
+        edges {
+          node {
+            owner {
+              avatarUrl
+              login
+            }
+          }
+        }
+      }
+    }
+  }
+}`).then((data) => {
+    console.log(data.repositoryOwner.repository.forks.edges)
+    res.render('index', {
+      projects: data.repositoryOwner.repository.forks.edges,
+    })
   })
 })
 
