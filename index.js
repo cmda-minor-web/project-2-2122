@@ -7,10 +7,16 @@ require('dotenv').config({
     path: '.env-dev'
 })
 
-
 const {
-    API_KEY
-} = process.env
+    graphql
+} = require('@octokit/graphql')
+const graphqlAuth = graphql.defaults({
+    headers: {
+        authorization: 'token ' + process.env.API_KEY
+    },
+})
+
+
 
 app.set('view engine', 'ejs');
 
@@ -20,10 +26,29 @@ app.set('views', 'views');
 // Tell express to use a 'static' folder
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.render("home")
+app.get("/", (req, res) => {
+    graphqlAuth(`query {
+    repositoryOwner(login: "cmda-minor-web") {
+      repository(name: "css-to-the-rescue-2122") {
+        forks(first: 100) {
+          edges {
+            node {
+              owner {
+                avatarUrl
+                login
+              }
+            }
+          }
+        }
+      }
+    }
+  }`).then((data) => {
+        console.log(data.repositoryOwner.repository.forks.edges)
+        res.render('home', {
+            projects: data.repositoryOwner.repository.forks.edges,
+        })
+    })
 })
-
 
 app.listen(port, () => {
     console.log(`Ai we live at http://${hostname}:${port}/`);

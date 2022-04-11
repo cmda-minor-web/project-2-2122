@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/fabian-vis/SUUUUUI#readme",
   "dependencies": {
+    "@octokit/graphql": "^4.8.0",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "octokit": "^1.7.1"
   }
 }
