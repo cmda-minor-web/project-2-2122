@@ -1,5 +1,10 @@
 <%- include('./partials/head') %>
 <main>
-    xdd
+    <%projects.forEach((repo) => {%>
+
+    <p><%= repo.node.owner.login %></p>
+    <% console.log(repo.node.owner.avatarUrl) %>
+    <img src="<%= repo.node.owner.avatarUrl %> " alt="hoofden">
+    <%})%>
 </main>
 <%- include('./partials/foot') %>

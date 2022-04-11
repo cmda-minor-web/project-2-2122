@@ -43,7 +43,6 @@ app.get("/", (req, res) => {
       }
     }
   }`).then((data) => {
-        console.log(data.repositoryOwner.repository.forks.edges)
         res.render('home', {
             projects: data.repositoryOwner.repository.forks.edges,
         })
