@@ -1,0 +1,25 @@
+{
+  "name": "de-minor-web-wereld",
+  "version": "1.0.0",
+  "description": "Project 2 minor web 2122",
+  "main": "app.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tomvandenberg11/project-2-2122.git"
+  },
+  "author": "Tom van den Berg & Tim de Roller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tomvandenberg11/project-2-2122/issues"
+  },
+  "homepage": "https://github.com/Tomvandenberg11/project-2-2122#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
