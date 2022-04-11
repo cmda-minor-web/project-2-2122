@@ -19,7 +19,8 @@ _Assignment explanation_
 
 ## 📖 About the project
 
-_Tell where the project is about_
+### First idea
+Our first idea is to make a live feed of the commit messages of every contender of the minor Web design and development.
 
 ## 🛠 Built with
 
