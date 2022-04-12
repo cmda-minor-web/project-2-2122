@@ -25,14 +25,22 @@ module.exports = express
             }
           }
           repository(name: "browser-technologies-2122", owner: "cmda-minor-web") {
-            forks(first: 100, privacy: PUBLIC) {
+            forks(first: 10, privacy: PUBLIC) {
               totalCount
               nodes {
                 forkCount
                 url
                 name
                 owner {
-                  avatarUrl(size: 250)
+                  avatarUrl(size: 10)
+                }
+                commitComments(first: 10) {
+                  totalCount
+                  nodes {
+                    commit {
+                      message
+                    }
+                  }
                 }
               }
             }

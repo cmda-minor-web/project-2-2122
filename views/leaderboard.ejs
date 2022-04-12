@@ -9,8 +9,9 @@
       <article>
         <% repositories.nodes.forEach(project => { %>
           <p>project name: <%= project.name %></p>   
-          <p>user url: <a href="<%= project.url %>">Project</a></p>   
+          <p>user url: <a target="_blank" href="<%= project.url %>">Project</a></p>   
           <img src="<%= project.owner.avatarUrl %>" />
+          <p>commit counts:<%= project.commitComments.totalCount %></p>  
           <hr>
              
         <%}) %>
