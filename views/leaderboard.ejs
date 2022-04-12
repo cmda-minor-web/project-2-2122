@@ -6,6 +6,12 @@
   </section>
   
   <section>
+      <article>
+        <% repositories.nodes.forEach(project => { %>
+          <p>name: <%= project.name %></p>      
+        <%}) %>
+          
+      </article>
 <% //project.forEach(project => { %>
     <article>
       <h2>TotalCount: <%= //projects.totalCount %></h2>

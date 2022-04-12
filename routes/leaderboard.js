@@ -10,22 +10,52 @@ module.exports = express
   .get('/', function (req, res) {
     // Get the repository information from my GitHub account
     graphqlAuth(
-`
-{
-    viewer {
-      login
-    }
-    user(login: "basv1996") {
-      avatarUrl
-      bio
-      projects(first: 10) {
-        nodes {
-          name
-        }
-      }
-    }
-  }
-  `
+        `
+        {
+            viewer {
+              login
+            }
+            user(login: "basv1996") {
+              avatarUrl
+              bio
+              projects(first: 10) {
+                nodes {
+                  name
+                }
+              }
+            }
+            repository(name: "browser-technologies-2122", owner: "cmda-minor-web") {
+              forks(first: 10, privacy: PUBLIC) {
+                totalCount
+                nodes {
+                  forkCount
+                  url
+                  name
+                }
+              }
+            }
+          }
+        `
+
+
+
+
+// `
+// {
+//     viewer {
+//       login
+//     }
+//     user(login: "basv1996") {
+//       avatarUrl
+//       bio
+//       projects(first: 10) {
+//         nodes {
+//           name
+//         }
+//       }
+//     }
+//   }
+//   `
 
 
     //   `{
@@ -48,7 +78,8 @@ module.exports = express
       res.render('leaderboard', {
         //projects: data.user.repositories.edges,
         userData: data.user,
-        projects: data.user.projects
+        projects: data.user.projects,
+        repositories: data.repository.forks
       })
     })
   })
