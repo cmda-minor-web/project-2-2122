@@ -8,7 +8,11 @@
   <section>
       <article>
         <% repositories.nodes.forEach(project => { %>
-          <p>name: <%= project.name %></p>      
+          <p>project name: <%= project.name %></p>   
+          <p>user url: <a href="<%= project.url %>">Project</a></p>   
+          <img src="<%= project.owner.avatarUrl %>" />
+          <hr>
+             
         <%}) %>
           
       </article>

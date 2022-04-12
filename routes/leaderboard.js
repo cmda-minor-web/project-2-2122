@@ -12,29 +12,32 @@ module.exports = express
     graphqlAuth(
         `
         {
-            viewer {
-              login
-            }
-            user(login: "basv1996") {
-              avatarUrl
-              bio
-              projects(first: 10) {
-                nodes {
-                  name
-                }
+          viewer {
+            login
+          }
+          user(login: "basv1996") {
+            avatarUrl
+            bio
+            projects(first: 10) {
+              nodes {
+                name
               }
             }
-            repository(name: "browser-technologies-2122", owner: "cmda-minor-web") {
-              forks(first: 10, privacy: PUBLIC) {
-                totalCount
-                nodes {
-                  forkCount
-                  url
-                  name
+          }
+          repository(name: "browser-technologies-2122", owner: "cmda-minor-web") {
+            forks(first: 100, privacy: PUBLIC) {
+              totalCount
+              nodes {
+                forkCount
+                url
+                name
+                owner {
+                  avatarUrl(size: 250)
                 }
               }
             }
           }
+        }
         `
 
 
