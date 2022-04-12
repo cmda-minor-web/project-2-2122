@@ -9,8 +9,24 @@ module.exports = express
 
   .get('/', function (req, res) {
     // Get the repository information from my GitHub account
-    graphqlAuth(`{
-      user(login: "ju5tu5") {
+    graphqlAuth(
+
+      // `{
+      //   repository(name: "zwerfinator", owner: "basv1996") {
+      //     homepageUrl
+      //     name
+      //     viewerHasStarred
+      //   }
+      //   user (login: "basv1996"){
+      //     id
+      //     commitComments {
+      //       totalCount
+      //     }
+      //   }
+      // }`
+      
+      `{
+      user(login: "basv1996") {
         repositories(first: 100, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
           edges {
             node {
@@ -23,9 +39,12 @@ module.exports = express
           }
         }
       }
-    }`).then((data) => {
+    }`
+    
+    ).then((data) => {
       res.render('projects', {
         projects: data.user.repositories.edges,
+        //projects: data.user.repository
       })
     })
   })

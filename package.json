@@ -1,0 +1,33 @@
+{
+  "name": "git-tournement",
+  "version": "1.0.0",
+  "description": "project 2",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basv1996/project-2-2122.git"
+  },
+  "author": "Juul, Pepijn & Bas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/basv1996/project-2-2122/issues"
+  },
+  "homepage": "https://github.com/basv1996/project-2-2122#readme",
+  "dependencies": {
+    "@octokit/graphql": "^4.8.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "octokit": "^1.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

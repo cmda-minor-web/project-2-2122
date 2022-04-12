@@ -1,0 +1,27 @@
+<%- include('./partials/head') %>
+
+  <section>
+    <h2>Leaderboard page</h2>
+    <p>Here are the leaderboards</p>
+  </section>
+  
+  <section>
+<% //project.forEach(project => { %>
+    <article>
+      <h2>TotalCount: <%= //projects.totalCount %></h2>
+      <% //}) %>
+    </article>
+    <%= projects.totalCount %>
+      <% //userData.forEach(user => { %>
+      <article>
+          <img src="<%= userData.avatarUrl %>" />
+          <% //}) %>
+        </article>
+
+
+     
+
+
+  </section>
+
+<%- include('./partials/foot') %>
