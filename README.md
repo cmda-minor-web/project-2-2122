@@ -1,4 +1,4 @@
-# Project 2: GitHub Hackaton 2021/22
+# Project 2 @cmda-minor-web 2021 - 2022
 
 Four days of creative exploration using the GitHub GraphQL API as the outset.
 
